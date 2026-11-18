@@ -1,0 +1,6 @@
+patient_id,first_name,last_name,age,gender,body_temp,blood_pressure,admission_date
+101,Jan,Kowalski,45,M,36.6,120/80,2023-05-12
+102,Anna,Nowak,,F,38.5,140/90,2023-05-14
+103,Piotr,Wiśniewski,62,M,37.2,,2023-05-15
+104,Maria,Wójcik,29,F,,110/70,2023-05-15
+105,Tomasz,Kamiński,55,M,39.1,150/95,2023-05-16
