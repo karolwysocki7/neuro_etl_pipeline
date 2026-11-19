@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Tabela 1: Metadane uczestników eksperymentu
 df_participants = pd.DataFrame({
@@ -71,3 +73,16 @@ print("="*50)
 print(df_clean)
 print("="*50)
 print(protocol_summary)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12,4.5))
+sns.boxplot(data=df_clean,x='protocol', y='alpha_power',hue='protocol',palette='Set2',ax=ax1)
+ax1.set_title('Porownanie mocy alpha do protokołu')
+ax1.set_xlabel('protocol')
+ax1.set_ylabel('alpha_power')
+sns.lineplot(data=df_clean, x='session_no',y='alpha_power',hue='protocol',marker='o', ax=ax2)
+ax2.set_title('Przebieg mocy alpha w kolejnych sesjach')
+ax2.set_xlabel('numer sesji')
+ax2.set_ylabel('alpha power')
+plt.tight_layout()
+fig.savefig('chart_summary.png', dpi=150)
+plt.show()
